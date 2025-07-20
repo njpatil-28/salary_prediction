@@ -18,17 +18,24 @@ A sleek and intelligent web application built with **Streamlit** that predicts a
 ## 📂 File Structure
   
   salary_prediction_app/
+  
   │
+  
   ├── app.py # Main Streamlit application
+  
   ├── salary_bagging_model.pkl # Trained ML model
+  
   ├── scaler.pkl # Standard scaler for features
+  
   ├── gender1_encoder.pkl # Label encoder for gender
+  
   ├── education_level_encoder.pkl # Label encoder for education
+  
   ├── job_title_encoder.pkl # Label encoder for job titles
+  
   ├── README.md # You're here!
 
   
-
 ## 🧠 Model Info
 
 - **Algorithm**: Bagging Regressor
