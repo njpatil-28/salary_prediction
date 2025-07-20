@@ -4,16 +4,20 @@ import pickle
 
 @st.cache_resource
 def load_model_and_encoders():
-    with open("salary_bagging_model.pkl", "rb") as model_file:
-        model = pickle.load(model_file)
-    with open("scaler.pkl", "rb") as scaler_file:
-        scaler = pickle.load(scaler_file)
-    with open("Gender_encoder.pkl", "rb") as f:
-        gender_encoder = pickle.load(f)
-    with open("Education Level_encoder.pkl", "rb") as f:
-        education_encoder = pickle.load(f)
-    with open("Job Title_encoder.pkl", "rb") as f:
-        job_encoder = pickle.load(f)
+    try:
+        with open("salary_bagging_model.pkl", "rb") as model_file:
+            model = pickle.load(model_file)
+        with open("scaler.pkl", "rb") as scaler_file:
+            scaler = pickle.load(scaler_file)
+        with open("gender_encoder.pkl", "rb") as f:
+            gender_encoder = pickle.load(f)
+        with open("education_level_encoder.pkl", "rb") as f:
+            education_encoder = pickle.load(f)
+        with open("job_title_encoder.pkl", "rb") as f:
+            job_encoder = pickle.load(f)
+    except Exception as e:
+        st.error(f"❌ Failed to load model or encoders: {e}")
+        raise e
     return model, scaler, gender_encoder, education_encoder, job_encoder
 
 model, scaler, gender_encoder, education_encoder, job_encoder = load_model_and_encoders()
