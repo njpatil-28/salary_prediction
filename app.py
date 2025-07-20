@@ -9,7 +9,7 @@ def load_model_and_encoders():
             model = pickle.load(model_file)
         with open("scaler.pkl", "rb") as scaler_file:
             scaler = pickle.load(scaler_file)
-        with open("gender_encoder.pkl", "rb") as f:
+        with open("gender1_encoder.pkl", "rb") as f:
             gender_encoder = pickle.load(f)
         with open("education_level_encoder.pkl", "rb") as f:
             education_encoder = pickle.load(f)
