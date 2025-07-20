@@ -2,7 +2,6 @@ import streamlit as st
 import numpy as np
 import pickle
 
-# ---- Load trained model and encoders ----
 @st.cache_resource
 def load_model_and_encoders():
     with open("salary_bagging_model.pkl", "rb") as model_file:
@@ -19,13 +18,10 @@ def load_model_and_encoders():
 
 model, scaler, gender_encoder, education_encoder, job_encoder = load_model_and_encoders()
 
-# ---- Page setup ----
 st.set_page_config(page_title="AI Salary Class Predictor", page_icon="💼", layout="centered")
 
-# ---- Theme toggle ----
 theme = st.sidebar.radio("🌓 Theme", ["Dark", "Light"])
 
-# Define theme colors
 if theme == "Dark":
     bg_color = "#1a1a1a"
     card_bg = "rgba(255, 255, 255, 0.07)"
@@ -47,7 +43,7 @@ else:
     sidebar_bg = "rgba(52, 152, 219, 0.1)"
     sidebar_text = "#2c3e50"
 
-# ---- Dynamic CSS Styling ----
+#  Dynamic CSS Styling 
 st.markdown(f"""
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
@@ -214,7 +210,6 @@ st.markdown(f"""
 
 st.markdown('<div class="main-card">', unsafe_allow_html=True)
 
-# ---- Header with stats/info cards ----
 col1, col2, col3 = st.columns(3)
 with col1:
     st.metric("🎯 Accuracy", "94.2%", "2.1%")
@@ -233,7 +228,6 @@ st.markdown(f"""
     <hr style="margin-top:1em; margin-bottom:2em; border: 0.5px solid #38ef7d;">
 """, unsafe_allow_html=True)
 
-# ---- Input Form ----
 gender_options = gender_encoder.classes_
 education_options = education_encoder.classes_
 job_options = job_encoder.classes_
@@ -275,7 +269,7 @@ with st.form(key="input_form"):
 
 st.markdown('</div>', unsafe_allow_html=True)
 
-# ---- Sidebar instructions ----
+#  Sidebar instructions 
 with st.sidebar:
     st.markdown('<div class="sidebar-instructions">', unsafe_allow_html=True)
     st.markdown("### ℹ️ How to use")
