@@ -224,7 +224,7 @@ with col3:
 
 st.markdown(f"""
     <h1 style='text-align: center; letter-spacing: 1px; color: {text_color}; margin-top: 1.5rem;'>
-        💼 AI Salary Class Predictor
+        💼 AI Employee Salary Predictor
     </h1>
     <p style='text-align: center;' class='secondary-text'>
         <b>Enter employee details and let AI predict the salary class.</b>
