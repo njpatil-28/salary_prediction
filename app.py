@@ -22,7 +22,7 @@ def load_model_and_encoders():
 
 model, scaler, gender_encoder, education_encoder, job_encoder = load_model_and_encoders()
 
-st.set_page_config(page_title="AI Salary Class Predictor", page_icon="💼", layout="centered")
+st.set_page_config(page_title="AI Employee Salary Predictor", page_icon="💼", layout="centered")
 
 theme = st.sidebar.radio("🌓 Theme", ["Dark", "Light"])
 
